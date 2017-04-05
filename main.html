@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Train</title>
+<!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+      <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+      <!-- jQuery -->
+      <script src="https://code.jquery.com/jquery.js"></script>
+
+      <!-- Link to Moment.js should go here -->
+  	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+  </head>
+  <body>
+  	<div class="container-fluid">
+  		<!-- Header row -->
+  		<div class="row">
+  			<div class="col-md-1"></div>
+  			<div class="col-md-10">
+  				<div class="jumbotron">
+  					<h1 class="text-center">Train Scheduling <br> System </h1>
+  				</div>
+  			</div>
+  			<div class="col-md-1"></div>
+  		</div>
+
+  		<!-- Search Results -->
+  		<div class="row">
+  			<div class="col-md-1"></div>
+  			<div class="col-md-10">
+
+  				<div class="panel panel-default results-panel">
+  					<div class="panel-heading">
+  						<h3 class="panel-title">Current Train Schedule</h3>
+  					</div>
+  					<div class="panel-body" id="results">
+  						<table class="table table-hover">
+  							<thead>
+  								<tr>
+  									<th>Train Name</th>
+  									<th>Destination</th>
+  									<th>Frequency (min)</th>
+  									<th>Next Arrival</th>
+  									<th>Minutes Away</th>
+  								</tr>
+  							</thead>
+  							<tbody id="table-body">
+  								<!-- <tr>
+  									<td>N/A</td>
+  									<td>N/A</td>
+  									<td>N/A</td>
+  									<td>N/A</td>
+  									<td>N/A</td>
+  								</tr> -->
+  							</tbody>
+  						</table>
+  					</div>
+
+  				</div>
+  				<div class="col-md-1"></div>
+  			</div>
+  		</div>
+
+  		<!-- Search Parameters -->
+  		<div class="row">
+  			<div class="col-md-1"></div>
+  			<div class="col-md-10">
+
+  				<div class="panel panel-default search-panel">
+  					<div class="panel-heading">
+  						<h3 class="panel-title">Add Train</h3>
+  					</div>
+  					<div class="panel-body">
+  						<form class="form-group">
+
+  							<label for="train-name">
+  								<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+  								Train Name
+  							</label>
+  							<input type="text" class="form-control" id="train-name" placeholder=""></input>
+
+  							<label for="destination"><span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>
+  								Destination</label>
+  							<input type="text" class="form-control" id="destination" placeholder="City, STATE"></input>
+
+  							<label for="time">
+  								<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+  								First Train Time (HH mm - military time)
+  							</label>
+  							<input type="text" class="form-control" id="first-time" placeholder="ex.'0900' for 9:00 AM or '1525' for 3:25 PM" 
+  							></input>
+
+  							<label for="text">
+  								<span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+  								Frequency (min)
+  							</label>
+  							<input type="text" class="form-control" id="frequency" placeholder=""></input>
+  							<!-- Submit Button -->
+  							<button type="submit" class="btn btn-success" id="submit-btn">Submit</button>
+
+  						</form>
+  					</div>
+  				</div>
+  				<div class="col-md-1"></div>
+  			</div>
+  		</div>
+  
+
+<script type="text/javascript" src="assets/js/logic2.js"></script>
+
+  <style>
+    input {
+      margin-bottom: 15px;
+    }
+
+   .search-panel, .results-panel {
+     border: 2.5px solid #0040a8;
+   }
+
+   .search-panel .panel-heading, .results-panel .panel-heading, .jumbotron {
+     background-color: #0040a8;
+     background-image: none;
+     color: white;
+   }
+
+   .jumbotron{
+   	background-image: url('http://i.huffpost.com/gen/1769579/thumbs/o-TRAIN-900.jpg');
+   	background-size: cover;
+   	background-repeat: no-repeat;
+   }
+  </style>
+  </body>
+</html>
